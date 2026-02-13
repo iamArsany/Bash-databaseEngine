@@ -28,10 +28,8 @@ function ConnectToDB (){
   if [[ -d "$dbName" ]]; then
     cd "$dbName"
     usedDB=$(printf '%q\n' "${PWD##*/}")
-    # export PS1="${usedDB} >"
     PS3="${usedDB} >"
     doDBOperation
-    echo "after return"
   else
     echo "No Database with that Name!"
   fi
